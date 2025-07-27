@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velas Personalizadas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <script defer src="script.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fffaf5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #ffb6b9;
+      padding: 1rem 1.5rem;
+      color: white;
+      font-size: 1.5rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .instagram-link {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+    }
+    .instagram-link a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    .producto {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+    .producto img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .carrito {
+      padding: 1rem;
+      background: #ffe0e2;
+    }
+    button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #pago {
+      display: none;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    /* Media queries para pantallas pequeñas */
+    @media (max-width: 500px) {
+      header {
+        flex-direction: column;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .instagram-link {
+        position: static;
+        transform: none;
+        margin-top: 0.5rem;
+      }
+      .catalogo {
+        padding: 1rem;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Velas Personalizadas 🌸
+    <div class="instagram-link">
+      <a href="https://www.instagram.com/luzdeluna.333" target="_blank">📷 Instagram</a>
+    </div>
+  </header>
+
+  <div class="catalogo" id="catalogo"></div>
+
+  <div class="carrito">
+    <h2>Carrito 🛒</h2>
+    <ul id="carrito-lista"></ul>
+    <button id="pagar-btn">Ir a pagar</button>
+    <div id="pago"></div>
+  </div>
+</body>
+</html>
+
